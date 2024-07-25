@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Index</title>
+</head>
+<body>
+  <h1>All Imported Cars</h1>
+  <ul>
+    <% cars.forEach(car => { %>
+     <li><%= car.year %> <%= car.make %> <%= car.model %></li>
+      <ul>
+        <li>Car Color: <%= car.color %></li>
+        <li>Can The Car Start? <%=car.isAbleToStart%></li>
+      </ul>
+    <% }) %>
+  </ul>
+  
+  <form action="/cars/new">
+    <button type="submit">Add New Cars?</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit a New Car</title>
+</head>
+
+<body>
+  <h1>Add a New Car!</h1>
+  <form action="/cars" method="POST">
+    <fieldset aria-labelledby="car-legend">
+      <legend id="car-legend">Car Information</legend>
+      <div>
+        <label for="car-year">Car Year:</label>
+        <input type="number" id="car-year" name="year" required />
+      </div>
+
+      <div>
+        <label for="car-make">Choose a Car Brand</label>
+        <input list="brands" id="car-make" name="make" required>
+        <datalist id="brands" required>
+          <option value="Toyota"></option>
+          <option value="Mercedes"></option>
+          <option value="Nissan"></option>
+          <option value="Honda"></option>
+          <option value="BMW"></option>
+          <option value="Jeep"></option>
+          <option value="Dodge"></option>
+          <option value="Ford"></option>
+          <option value="Tesla"></option>
+          <option value="Rivian"></option>
+          <option value="Hyundai"></option>
+          <option value="Kia"></option>
+          <option value="Subaru"></option>
+          <option value="Cadillac"></option>
+          <option value="Volkswagon"></option>
+        </datalist>
+      </div>
+
+      <div>
+        <label for="car-model">Model</label>
+        <input type="text" id="car-model" name="model" maxlength="25" required>
+      </div>
+
+      <div>
+        <label for="car-color">Color</label>
+        <select id="car-color" name="color" required>
+          <option value="Red">Red</option>
+          <option value="Orange">Orange</option>
+          <option value="Yellow">Yellow</option>
+          <option value="Green">Green</option>
+          <option value="Blue">Blue</option>
+          <option value="Purple">Purple</option>
+          <option value="Brown">Brown</option>
+          <option value="Black">Black</option>
+          <option value="Gray">Gray</option>
+          <option value="White">White</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="isAbleToStart">Can This Car Start?</label>
+        <input type="checkbox" id="isAbleToStart" name="isAbleToStart">
+      </div>
+
+      <button type="submit">Submit Car</button>
+  </form>
+  </fieldset>
+</body>
+
+</html>
