@@ -2,7 +2,7 @@
   <title><%= car.year %> <%= car.make %> <%= car.model %></title>
   </head>
 
-  <body>
+  <body class="show-page">
     <h1>
       <%= car.year %>
         <%= car.make %>
@@ -24,7 +24,7 @@
       <a href="/cars/<%= car._id %>/edit">Edit Car Details</a>
     </div>
 
-    <div clas="delete-car-div">
+    <div class="delete-car-div">
       <form action="/cars/<%= car._id %>?_method=DELETE" method="POST">
         <button id="delete-car-button" type="submit">Remove This Car</button>
       </form>

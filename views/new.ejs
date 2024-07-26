@@ -2,14 +2,14 @@
   <title>Submit a New Car</title>
 </head>
 
-<body>
+<body class="new-car">
   <h1>Add a New Car!</h1>
   <form action="/cars" method="POST">
     <fieldset aria-labelledby="car-legend">
-      <legend id="car-legend">Car Information</legend>
+      <legend id="car-legend"><span>Car Information</span></legend>
       <div>
         <label for="car-year">Car Year:</label>
-        <input type="number" id="car-year" name="year" max="2024" required />
+        <input type="number" id="car-year" name="year" min="1900" max="2024" required />
       </div>
 
       <div>
@@ -31,6 +31,7 @@
           <option value="Subaru"></option>
           <option value="Cadillac"></option>
           <option value="Volkswagon"></option>
+          <option value="Cheverlot"></option>
         </datalist>
       </div>
 
@@ -60,7 +61,7 @@
         <input type="checkbox" id="isAbleToStart" name="isAbleToStart">
       </div>
 
-      <button type="submit">Submit Car</button>
+      <div id="submit-button"><button type="submit">Submit Car</button></div>
   </form>
   </fieldset>
 </body>
