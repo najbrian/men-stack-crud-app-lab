@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include('../partials/html-head.ejs') %>
   <title>Car Index</title>
 </head>
 <body>
   <h1>All Imported Cars</h1>
   <ul>
     <% cars.forEach(car => { %>
-     <li><%= car.year %> <%= car.make %> <%= car.model %></li>
-      <ul>
-        <li>Car Color: <%= car.color %></li>
-        <li>Can The Car Start? <%=car.isAbleToStart%></li>
-      </ul>
+     <li><a href="/cars/<%=car._id%>"><%= car.year %> <%= car.make %> <%= car.model %></a></li>
     <% }) %>
   </ul>
   

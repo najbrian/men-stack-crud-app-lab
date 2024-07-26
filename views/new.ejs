@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%- include('./partials/html-head.ejs') %>
   <title>Submit a New Car</title>
 </head>
 
@@ -14,7 +9,7 @@
       <legend id="car-legend">Car Information</legend>
       <div>
         <label for="car-year">Car Year:</label>
-        <input type="number" id="car-year" name="year" required />
+        <input type="number" id="car-year" name="year" max="2024" required />
       </div>
 
       <div>
