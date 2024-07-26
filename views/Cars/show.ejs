@@ -1,9 +1,5 @@
 <%- include('../partials/html-head.ejs') %>
-  <title>
-    <%= car.year %>
-      <%= car.make %>
-        <%= car.model %>
-  </title>
+  <title><%= car.year %> <%= car.make %> <%= car.model %></title>
   </head>
 
   <body>
@@ -12,27 +8,30 @@
         <%= car.make %>
           <%= car.model %>
     </h1>
-    <ul>
-      <li>Car Color: <%= car.color %>
-      </li>
-      <% if (car.isAbleToStart) { %>
-        <li>Does the engine start? Yes</li>
-        <% } else {%>
-          <li>Does the engine start? No</li>
-          <% } %>
-    </ul>
+    <div class="car-details">
+      <ul>
+        <li>Car Color: <%= car.color %>
+        </li>
+        <% if (car.isAbleToStart) { %>
+          <li>Does the engine start? Yes</li>
+          <% } else {%>
+            <li>Does the engine start? No</li>
+            <% } %>
+      </ul>
+    </div>
 
-    <div>
+    <div class="edit-car-div">
+      <a href="/cars/<%= car._id %>/edit">Edit Car Details</a>
+    </div>
+
+    <div clas="delete-car-div">
       <form action="/cars/<%= car._id %>?_method=DELETE" method="POST">
-        <button type="submit">Remove This Car</button>
+        <button id="delete-car-button" type="submit">Remove This Car</button>
       </form>
     </div>
 
-    <div>
-      <a href="/fruits/<%= car._id %>/edit">Edit Car Details</a>
-    </div>
 
-    <a href="/cars">Back To Home</a>
+    <a href="/cars">Back to Garage</a>
   </body>
 
   </html>

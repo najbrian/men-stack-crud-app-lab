@@ -1,1 +1,64 @@
 <%- include('../partials/html-head.ejs') %>
+  <title>Update Car Details</title>
+  </head>
+
+  <body>
+    <form action="/cars/<%= car._id %>?_method=PUT" method="POST">
+      <div>
+        <label for="car-year">Car Year:</label>
+        <input type="number" id="car-year" name="year" max="2024" value="<%= car.year %>" required />
+      </div>
+
+      <div>
+        <label for="car-make">Choose a Car Brand</label>
+        <input list="brands" id="car-make" name="make" value="<%= car.make %>" required>
+        <datalist id="brands" required>
+          <option value="Toyota"></option>
+          <option value="Mercedes"></option>
+          <option value="Nissan"></option>
+          <option value="Honda"></option>
+          <option value="BMW"></option>
+          <option value="Jeep"></option>
+          <option value="Dodge"></option>
+          <option value="Ford"></option>
+          <option value="Tesla"></option>
+          <option value="Rivian"></option>
+          <option value="Hyundai"></option>
+          <option value="Kia"></option>
+          <option value="Subaru"></option>
+          <option value="Cadillac"></option>
+          <option value="Volkswagon"></option>
+        </datalist>
+      </div>
+
+      <div>
+        <label for="car-model">Model</label>
+        <input type="text" id="car-model" name="model" maxlength="25" value="<%= car.model %>" required>
+      </div>
+
+      <div>
+        <label for="car-color">Color</label>
+        <select id="car-color" name="color" required>
+          <option value="Red" <%= car.color === 'Red' ? 'selected' : '' %>>Red</option>
+          <option value="Orange" <%= car.color === 'Orange' ? 'selected' : '' %>>Orange</option>
+          <option value="Yellow" <%= car.color === 'Yellow' ? 'selected' : '' %>>Yellow</option>
+          <option value="Green" <%= car.color === 'Green' ? 'selected' : '' %>>Green</option>
+          <option value="Blue" <%= car.color === 'Blue' ? 'selected' : '' %>>Blue</option>
+          <option value="Purple" <%= car.color === 'Purple' ? 'selected' : '' %>>Purple</option>
+          <option value="Brown" <%= car.color === 'Brown' ? 'selected' : '' %>>Brown</option>
+          <option value="Black" <%= car.color === 'Black' ? 'selected' : '' %>>Black</option>
+          <option value="Gray" <%= car.color === 'Gray' ? 'selected' : '' %>>Gray</option>
+          <option value="White" <%= car.color === 'White' ? 'selected' : '' %>>White</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="isAbleToStart">Can This Car Start?</label>
+        <input type="checkbox" id="isAbleToStart" name="isAbleToStart" <% if (car.isAbleToStart) {%>checked<%} %>>
+      </div>
+
+      <button type="submit">Make Changes</button>
+    </form>
+  </body>
+
+  </html>

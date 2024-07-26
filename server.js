@@ -19,6 +19,8 @@ const Car = require('./models/car.js')
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride("_method"))
 app.use(logger("dev"))
+app.use(express.static(path.join(__dirname, "public")))
+
 
 
 app.get('/', (req, res) => {
@@ -49,15 +51,27 @@ app.post ('/cars', async (req, res) => {
   res.redirect('/cars')
 })
 
+app.get('/cars/:carId/edit', async (req, res) => {
+  const editCar = await Car.findById(req.params.carId)
+  res.render('cars/edit.ejs', {car: editCar})
+  console.log(editCar.color)
+})
+
+app.put('/cars/:carId', async (req, res) => {
+  if(req.body.isAbleToStart === 'on') {
+    req.body.isAbleToStart = true
+  } else {
+    req.body.isAbleToStart = false
+  }
+  await Car.findByIdAndUpdate(req.params.carId, req.body)
+  res.redirect(`/cars/${req.params.carId}`)
+})
+
 app.delete('/cars/:carId', async (req, res) => {
   await Car.findByIdAndDelete(req.params.carId)
   res.redirect('/cars')
 })
 
-app.get('/cars/:carId/edit', async (req, res) => {
-  const editCar = await Car.findById(req.params.carId)
-  res.render('/cars/edit.ejs', {car: editCar})
-})
 
 app.listen(3000, () => {
 

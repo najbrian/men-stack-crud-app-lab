@@ -2,7 +2,7 @@
   <title>Car Index</title>
 </head>
 <body>
-  <h1>All Imported Cars</h1>
+  <h1>Cars in the Garage</h1>
   <ul>
     <% cars.forEach(car => { %>
      <li><a href="/cars/<%=car._id%>"><%= car.year %> <%= car.make %> <%= car.model %></a></li>
