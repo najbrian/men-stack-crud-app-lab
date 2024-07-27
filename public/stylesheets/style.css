@@ -41,6 +41,37 @@ button:active {
   opacity: 0.4;
 }
 
+form {
+  background-color: rgb(70, 159, 165);
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+label {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+input {
+  margin-bottom: 5px;
+}
+
 #index-p {
 background-color: rgb(245, 245, 245);
 }
@@ -66,35 +97,12 @@ background-color: rgb(245, 245, 245);
   background-position: top left;
 }
 
-form {
-  background-color: rgb(70, 159, 165);
-  color: white;
-  font-weight: bold;
-  border-radius: 20px;
-}
-
-fieldset {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  margin: 10px;
-  border-radius: 20px;
-}
-
-label {
-  margin-right: 5px;
-  margin-bottom: 5px;
-}
-
-input {
-  margin-bottom: 5px;
-}
-
 #submit-button {
-  justify-self: center;
-  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 10px;
+  width: 100%;
 }
 
 .show-page {
@@ -102,7 +110,17 @@ input {
 }
 
 .edit-car-div {
-  margin: 10px;
-  border: 5px solid black;
+  margin: 25px;
 }
 
+.show-car-details {
+  font-weight: bold;
+}
+
+.car-details {
+  background-color:rgb(123, 124, 124);
+  border-radius: 20px;
+  margin: 50px;
+  padding: 20px;
+  color: white;
+}

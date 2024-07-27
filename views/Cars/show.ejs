@@ -9,26 +9,28 @@
           <%= car.model %>
     </h1>
     <div class="car-details">
+      <p><strong>Car Details:</strong></p>
       <ul>
-        <li>Car Color: <%= car.color %>
+        <li><span class="show-car-details">Car Color:</span> <%= car.color %>
         </li>
         <% if (car.isAbleToStart) { %>
-          <li>Does the engine start? Yes</li>
+          <li><span class="show-car-details">Does the engine start?</span> Yes</li>
           <% } else {%>
-            <li>Does the engine start? No</li>
+            <li><span class="show-car-details">Does the engine start?</span> No</li>
             <% } %>
       </ul>
+    </div>
+    
+    <div class="delete-car-div">
+      <form action="/cars/<%= car._id %>?_method=DELETE" method="POST">
+        <button id="delete-car-button" type="submit">Remove This Car</button>
+      </form>
     </div>
 
     <div class="edit-car-div">
       <a href="/cars/<%= car._id %>/edit">Edit Car Details</a>
     </div>
 
-    <div class="delete-car-div">
-      <form action="/cars/<%= car._id %>?_method=DELETE" method="POST">
-        <button id="delete-car-button" type="submit">Remove This Car</button>
-      </form>
-    </div>
 
 
     <a href="/cars">Back to Garage</a>

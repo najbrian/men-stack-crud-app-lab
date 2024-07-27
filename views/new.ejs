@@ -5,7 +5,7 @@
 <body class="new-car">
   <h1>Add a New Car!</h1>
   <form action="/cars" method="POST">
-    <fieldset aria-labelledby="car-legend">
+    <fieldset id="new-car-form" aria-labelledby="car-legend">
       <legend id="car-legend"><span>Car Information</span></legend>
       <div>
         <label for="car-year">Car Year:</label>
@@ -62,8 +62,8 @@
       </div>
 
       <div id="submit-button"><button type="submit">Submit Car</button></div>
+    </fieldset>
   </form>
-  </fieldset>
 </body>
 
 </html>
